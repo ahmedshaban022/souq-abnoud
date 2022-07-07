@@ -1,0 +1,29 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel  img{
+  width: 600px;
+  height: 350px;
+}
+
+.social-icnos{
+ color: white;
+
+
+}
+.social-icnos:hover{
+  color: orange;
+}
+
+.navbar{
+  background-color: teal;
+}
+.homePage{
+  min-height: 100vh;
+}
+
