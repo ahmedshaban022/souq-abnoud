@@ -19,8 +19,8 @@ const Product = ({prd}) => {
 const removeImage = async (prd) => {
 
   try {
-    let res = await axios.post(
-      "/api/image/destroy",
+       await axios.post(
+      "https://souq-abnod.herokuapp.com/api/image/destroy",
       { public_id: prd.img.public_id },
       { headers: { token: localStorage.getItem('token') } }
     );
@@ -36,7 +36,7 @@ const removeImage = async (prd) => {
       if(!isAdmin) return false;
       try {
         await removeImage(prd);
-        await axios.delete('/api/products/'+prd._id,{headers:{token:localStorage.getItem("token")}})
+        await axios.delete('https://souq-abnod.herokuapp.com/api/products/'+prd._id,{headers:{token:localStorage.getItem("token")}})
         toast.success("Product Deleted");
         setProducts(products.filter(prod=>prod._id!==prd._id));
       } catch (error) {

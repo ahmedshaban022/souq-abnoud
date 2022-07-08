@@ -4,8 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
+}
+.prds{
+  
+}
 .carousel  img{
   width: 650px;
   height: 400px;
