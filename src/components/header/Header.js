@@ -14,7 +14,7 @@ const Header = () => {
   const handleLogout=()=>{
     localStorage.clear();
     setIsAdmin(false);
-    window.location.href("https://ahmedshaban022.github.io/souq-abnoud/");
+    window.location.assign("https://ahmedshaban022.github.io/souq-abnoud/");
 
   }
   return (
