@@ -19,9 +19,9 @@ function App() {
       <Header/>
       <Routes >
 
-        <Route path='/' exact element={<Home/>} />
-        <Route path='/admin'exact  element={<AdminLogin/>} />
-        <Route path='/admin-panel' exact element={<AdminDashBoard/>} />
+        <Route path='souq-abnoud/' exact element={<Home/>} />
+        <Route path='souq-abnoud/admin'exact  element={<AdminLogin/>} />
+        <Route path='souq-abnoud/admin-panel' exact element={<AdminDashBoard/>} />
 
       </Routes>
       <Footer/>
