@@ -7,9 +7,7 @@ import Products from '../products/Products'
 const Home = () => {
   return (
     <div className='homePage'>
-      <div>
-        <Eid/>
-      </div>
+    
       <div  className=''>
 
       <Carousal/>
