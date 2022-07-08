@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Rakkas&display=swap');
+
+/* * {
+  box-sizing: border-box;
+  cursor: default;
+  margin: 0;
+    padding: 0;
+} */
+
+.eid {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f0d25;
+  overflow: hidden;
+}
+
+.zagrafa {
+  animation: spinner 200s linear infinite;
+  width: 400px;
+  position: relative;
+}
+
+.zagrafa2 {
+  animation: spinner 1000s linear infinite;
+  width: 600px;
+  position: absolute;
+  opacity: .1;
+}
+
+.zagrafa3 {
+  animation: spinner 5000s linear infinite;
+  width: 1000px;
+  position: absolute;
+  opacity: .01;
+}
+
+span.one {
+  color: black;
+  font-size: 90px;
+  word-wrap: break-word;
+  font-family: 'Rakkas', cursive;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-top: -45px;
+  margin-left: -5px;
+  transform: translate(-50%, -50%);
+  animation: changeColor 2s ease infinite;
+}
+
+span.two {
+  color: black;
+  font-size: 100px;
+  word-wrap: break-word;
+  font-family: 'Rakkas', cursive;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  margin-top: 10px;
+  margin-left: 2px;
+  transform: translate(-50%, -50%);
+  animation: changeColor 4s ease infinite;
+}
+
+
+
+
+
+::selection {
+  color: none;
+  background: none;
+}
+
+
+
+
+
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+  
+}
+
+@keyframes changeColor {
+  0% {
+    color: #051937;
+  }
+  
+  50% {
+    color: #0f0d25;
+  }
+  
+  100% {
+    color: #051937;
+  }
+  
+}
