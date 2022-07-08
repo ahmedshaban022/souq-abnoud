@@ -26,7 +26,7 @@ const Header = () => {
     
     {isAdmin? <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item m-2 ">
-          <Link to="/admin-panel" className='text-decoration-none fw-bold text-white'>Admin Panel</Link>
+          <Link to="souq-abnoud/admin-panel" className='text-decoration-none fw-bold text-white'>Admin Panel</Link>
 
         </li>
         <li className="nav-item">
@@ -43,7 +43,10 @@ const Header = () => {
         <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
       </svg>
         </a>
-        <Link className='text-decoration-none text-white' to={"souq-abnoud/admin"}>Admin</Link>
+        <Link className='text-decoration-none text-white' to={"souq-abnoud/admin"}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+</svg></Link>
    </div>
     
   }

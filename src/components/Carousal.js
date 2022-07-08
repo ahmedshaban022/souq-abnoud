@@ -4,7 +4,7 @@ import Loader from './loader/Loader';
 
 const Carousal = () => {
 
-    // const [carousalImgs,setCarousalImgs]=useState([img1,img2,img3,img4,img5]);
+    
 
 
   return (

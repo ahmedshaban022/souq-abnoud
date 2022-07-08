@@ -13,8 +13,9 @@ export const DataProvider =({children})=>{
 
     useEffect(() => {
         const fetchData=async()=>{
-            const cateResult = await axios.get("/api/categories");
-            const {data} = await axios.get("/api/products");
+            const cateResult = await axios.get("https://souq-abnod.herokuapp.com/api/categories");
+            const {data} = await axios.get("https://souq-abnod.herokuapp.com/api/products");
+            
             setCategories(cateResult.data.data);
             setProducts(data.data);
             setOriginalProducts(data.data)

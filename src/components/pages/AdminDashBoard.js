@@ -36,7 +36,7 @@ const handlOnChange=({target})=>{
       return false;
     }
     try {
-    const {data} =await axios.post('/api/products',{...product,img},{headers:{token:localStorage.getItem('token')}})
+    const {data} =await axios.post('https://souq-abnod.herokuapp.com/api/products',{...product,img},{headers:{token:localStorage.getItem('token')}})
       
       toast.success("Product Inserted");
       setProducts([...products,data.data]);
@@ -56,7 +56,7 @@ const removeImage = async () => {
   setLoading(true);
   try {
     let res = await axios.post(
-      "/api/image/destroy",
+      "https://souq-abnod.herokuapp.com/api/image/destroy",
       { public_id: img.public_id },
       { headers: { token: localStorage.getItem('token') } }
     );
@@ -84,7 +84,7 @@ const handleUploadImg = async (e) => {
   try {
     let formData = new FormData();
     formData.append("file", file);
-    let res = await axios.post("/api/image/upload", formData, {
+    let res = await axios.post("https://souq-abnod.herokuapp.com/api/image/upload", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         token: localStorage.getItem('token') 
@@ -106,7 +106,7 @@ const handlAddCategory=async()=>{
   if(!newCategory){toast.warning("Category Name is required"); return false;}
   
   try {
-    const {data}= await axios.post("/api/categories",{categoryName:newCategory},{headers:{token:localStorage.getItem('token')}})
+    const {data}= await axios.post("https://souq-abnod.herokuapp.com/api/categories",{categoryName:newCategory},{headers:{token:localStorage.getItem('token')}})
     toast.success("Category Added"); 
     setCategories([...categories,data.data])
   } catch (error) {
@@ -118,7 +118,7 @@ const handlAddCategory=async()=>{
 const handleDeleteCategory=async(cate)=>{
   if(!window.confirm("انت متأكد عاوز تمسح الكاتيجوري ده ياسطا ؟")) return false;
   try {
-    await axios.delete('/api/categories/'+cate._id,{headers:{token:localStorage.getItem('token')}});
+    await axios.delete('https://souq-abnod.herokuapp.com/api/categories/'+cate._id,{headers:{token:localStorage.getItem('token')}});
     toast.success("Category Deleted");
     setCategories(categories.filter(c=>c._id!==cate._id));
     
