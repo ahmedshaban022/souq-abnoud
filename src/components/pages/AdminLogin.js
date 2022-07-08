@@ -31,7 +31,7 @@ const AdminLogin = () => {
             const {data} = await axios.post('https://souq-abnod.herokuapp.com/api/admin',{...admin});
            localStorage.setItem('token',data.token)
             toast.success("Welcom Admin");
-            window.location.replace("souq-abnoud/");
+            window.location.replace("/");
         } catch (error) {
             toast.error("UserName or Password is wrong")
         }
