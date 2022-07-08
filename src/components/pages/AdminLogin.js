@@ -31,7 +31,7 @@ const AdminLogin = () => {
             const {data} = await axios.post('/api/admin',{...admin});
            localStorage.setItem('token',data.token)
             toast.success("Welcom Admin");
-            window.location.replace("/");
+            window.location.replace("souq-abnoud/");
         } catch (error) {
             toast.error("UserName or Password is wrong")
         }
