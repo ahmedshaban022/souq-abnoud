@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
+import { toast } from "react-toastify";
 
 
 export const Globalstate = createContext();
@@ -18,8 +19,10 @@ export const DataProvider =({children})=>{
             
             setCategories(cateResult.data.data);
             setProducts(data.data);
-            setOriginalProducts(data.data)
+            setOriginalProducts(data.data);
+            toast.success("أهلاً بكم في سوق أبنود")
             
+        
         }
         fetchData();
     },[callBack])

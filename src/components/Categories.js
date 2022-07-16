@@ -34,7 +34,7 @@ const Categories = () => {
             }
                 {
                   categories ? categories.map((category,index)=>(
-                    <div className='fw-bold  rounded  text-white col-md-2 col-3 ' style={{backgroundColor:selectedCategory===category.categoryName ? "orange":"teal",cursor:"pointer"}}  key={index} onClick={()=>setSelectedCategory(category.categoryName)}> {category.categoryName} </div> 
+                    <div className='fw-bold  rounded  text-white col-md-2 col-3  my-auto p-1' style={{backgroundColor:selectedCategory===category.categoryName ? "orange":"teal",cursor:"pointer"}}  key={index} onClick={()=>setSelectedCategory(category.categoryName)}> {category.categoryName} </div> 
                     )) :<div className='d-flex justify-content-center'> 
                     <Loader/>
                   </div>

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { toast } from 'react-toastify'
 import Carousal from '../Carousal'
 import Gallerys from '../Categories'
 import Eid from '../events/Eid'
 import Products from '../products/Products'
 
 const Home = () => {
+
   return (
     <div className='homePage'>
     
