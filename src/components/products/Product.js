@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { Globalstate } from '../../Globalstate';
+import EditRecipe from './EditProduct';
 
 const Product = ({prd}) => {
 
@@ -59,7 +60,65 @@ const removeImage = async (prd) => {
         <p className='text-muted' >{prd.category}</p>   
             
         </div>
-          {isAdmin&&<button className='btn btn-danger' onClickCapture={()=>deletProduct(prd)}>Remove</button>}
+          {isAdmin&&
+          <div>
+            <button className='btn btn-danger' onClickCapture={()=>deletProduct(prd)}>Remove</button>
+          
+
+            <button
+    type="button"
+    className="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Edit
+  </button>
+
+  <div
+    className="modal fade"
+    id="exampleModal"
+    tabIndex={-1}
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div className="modal-dialog">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">
+            Edit Product
+          </h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          />
+        </div>
+        <div className="modal-body">
+
+        <EditRecipe product={prd}/>
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" className="btn btn-primary">
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+          
+          
+          
+           
+            </div>}
     </div>
     </div>
     </div>

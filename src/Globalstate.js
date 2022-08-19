@@ -11,6 +11,7 @@ export const DataProvider =({children})=>{
     const [products,setProducts]=useState([]);
     const [originalProducts,setOriginalProducts]=useState([]);
     const [callBack,setCallBack]=useState(false);
+    const [theam,setTheam]=useState(localStorage.getItem('theam')||"light");
 
     useEffect(() => {
         const fetchData=async()=>{
@@ -31,7 +32,8 @@ export const DataProvider =({children})=>{
         categories: [categories,setCategories],
         products: [products,setProducts],
         originalProducts:[originalProducts,setOriginalProducts],
-        callBack:[callBack,setCallBack]
+        callBack:[callBack,setCallBack],
+        theam:[theam,setTheam]
     }
 
 
