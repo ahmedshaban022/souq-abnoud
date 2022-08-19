@@ -46,9 +46,11 @@ const Products = () => {
         <div className='container row   text-center'>
         {
             products.length>0 ? products.map((prd,i)=>(
+            <>
             
                 <Product key={i} prd={prd}/>
-               
+            </>
+                
                 )):<div className='d-flex justify-content-center'> 
                   <Loader/>
                 </div>

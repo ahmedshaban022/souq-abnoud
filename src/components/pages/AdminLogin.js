@@ -28,7 +28,8 @@ const AdminLogin = () => {
        }else{
         try {
             
-            const {data} = await axios.post('https://souq-abnod.herokuapp.com/api/admin',{...admin});
+            // const {data} = await axios.post('https://souq-abnod.herokuapp.com/api/admin',{...admin});
+            const {data} = await axios.post('http://localhost:5000/api/admin',{...admin});
            localStorage.setItem('token',data.token)
             toast.success("Welcom Admin");
             window.location.assign("https://ahmedshaban022.github.io/souq-abnoud/");

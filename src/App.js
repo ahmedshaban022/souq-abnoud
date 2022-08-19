@@ -7,10 +7,11 @@ import { DataProvider } from './Globalstate';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom'
 import AdminLogin from './components/pages/AdminLogin';
 import AdminDashBoard from './components/pages/AdminDashBoard';
 import { useEffect } from 'react';
+import EditProduct from './components/products/EditProduct';
 function App() {
   useEffect(()=>{
     toast.success("أهلاً بكم في سوق أبنود")
@@ -20,13 +21,14 @@ function App() {
     <div className="App">
       
       <DataProvider>
-    <BrowserRouter >
+    <HashRouter >
       <Header/>
       <Routes >
 
-        <Route path='souq-abnoud/' exact element={<Home/>} />
-        <Route path='souq-abnoud/admin'exact  element={<AdminLogin/>} />
-        <Route path='souq-abnoud/admin-panel' exact element={<AdminDashBoard/>} />
+        <Route path='/' exact element={<Home/>} />
+        <Route path='/admin'exact  element={<AdminLogin/>} />
+        <Route path='/admin-panel' exact element={<AdminDashBoard/>} />
+        <Route path='/edit/:id' exact element={<EditProduct/>} />
 
       </Routes>
       <Footer/>
@@ -42,7 +44,7 @@ function App() {
           draggable
           pauseOnHover
           />
-    </BrowserRouter>
+    </HashRouter>
       </DataProvider>
     </div>
   );
