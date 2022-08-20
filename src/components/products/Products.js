@@ -34,7 +34,7 @@ const Products = () => {
     }
       
   return (
-    <div className='container bg-light  py-3 prds'>
+    <div className='container  py-3 prds'>
 
 
       <div className="input-group mb-3 w-50 m-auto ">

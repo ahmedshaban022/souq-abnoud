@@ -9,6 +9,7 @@ const Product = ({prd}) => {
 
   const [isAdmin,setIsAdmin]=useState(false);
   const state=useContext(Globalstate);
+  const [theam]=state.theam;
   const [products,setProducts]=state.products;
   const navigate=useNavigate();
   useEffect(()=>{
@@ -47,17 +48,17 @@ const removeImage = async (prd) => {
   return (
     <div className='col-md-6 col-lg-4 col-sm-12 my-3 '>
 
-    <div className="card  m-auto bg-light " style={{ width: "18rem" }}>
+    <div className="card  m-auto  " style={{ width: "18rem",backgroundColor:theam==="dark"?"black":"white" ,borderColor:theam==="dark"?"white":"gray"}}>
     <img src={prd.img.url} className="card-img-top prd-img" style={{height:"300px"}} alt="..." />
     <div className = "card-body">
        
         <div  className = "card-text ">
        <div className='d-flex justify-content-between'>
-       <p className='text-danger fw-bold'>{prd.title}</p>
+       <p className=' fw-bold' style={{color:'red'}}>{prd.title}</p>
         <p className='fw-bold text-secondary'> السعر : {prd.price} جنيه</p>   
        </div>
-        <p >{prd.description}</p>   
-        <p className='text-muted' >{prd.category}</p>   
+        <p style={{color:theam==="dark"?"white":"black"}}>{prd.description}</p>   
+        <p className='fw-bold' style={{color:theam==="dark"?"brown":"gray"}} >{prd.category}</p>   
             
         </div>
           {isAdmin&&

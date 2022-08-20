@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { toast } from 'react-toastify'
+import { Globalstate } from '../../Globalstate'
 import Carousal from '../Carousal'
 import Gallerys from '../Categories'
 import Eid from '../events/Eid'
 import Products from '../products/Products'
 
 const Home = () => {
-
+  const state=useContext(Globalstate);
+  const [theam]=state.theam
   return (
-    <div className='homePage'>
+    <div className='homePage' style={{backgroundColor:theam==="dark"?"black":"white"}}>
     
       <div  className=''>
 
@@ -19,7 +21,7 @@ const Home = () => {
 
       <Gallerys/>
       </div>
-      <Products/>
+      <Products  />
 
     </div>
   )
