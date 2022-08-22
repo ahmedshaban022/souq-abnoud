@@ -58,9 +58,8 @@ const handlOnChange=({target})=>{
     try {
     const {data} =await axios.patch('https://souq-abnod.herokuapp.com/api/products/'+product._id,{...product,img},{headers:{token:localStorage.getItem('token')}})
       
-      toast.success("Product Inserted");
-      setProducts([...products,data.data]);
-      setOriginalProducts([...originalProducts,data.data])
+      toast.success("Product Edited");
+      setCallBack(!callBack);
       navigate('/');
     } catch (error) {
       toast.error("Error !");
