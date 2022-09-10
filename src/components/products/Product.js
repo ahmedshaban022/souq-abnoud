@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { config } from '../../config';
 import { Globalstate } from '../../Globalstate';
 import EditRecipe from './EditProduct';
 
@@ -21,8 +22,7 @@ const Product = ({prd}) => {
 const removeImage = async (prd) => {
 
   try {
-       await axios.post(
-      "https://souq-abnod.herokuapp.com/api/image/destroy",
+       await axios.post(config.url+"api/image/destroy",
       { public_id: prd.img.public_id },
       { headers: { token: localStorage.getItem('token') } }
     );
@@ -38,7 +38,7 @@ const removeImage = async (prd) => {
       if(!isAdmin) return false;
       try {
         await removeImage(prd);
-        await axios.delete('https://souq-abnod.herokuapp.com/api/products/'+prd._id,{headers:{token:localStorage.getItem("token")}})
+        await axios.delete(config.url+'api/products/'+prd._id,{headers:{token:localStorage.getItem("token")}})
         toast.success("Product Deleted");
         setProducts(products.filter(prod=>prod._id!==prd._id));
       } catch (error) {

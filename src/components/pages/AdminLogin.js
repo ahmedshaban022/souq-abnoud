@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
+import { config } from '../../config';
 import "./login.css"
 const AdminLogin = () => {
 
@@ -28,7 +29,7 @@ const AdminLogin = () => {
        }else{
         try {
             
-            const {data} = await axios.post('https://souq-abnod.herokuapp.com/api/admin',{...admin});
+            const {data} = await axios.post(config.url+'api/admin',{...admin});
            localStorage.setItem('token',data.token)
             toast.success("Welcom Admin");
             window.location.assign("https://ahmedshaban022.github.io/souq-abnoud/");

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
+import { config } from "./config";
 
 
 export const Globalstate = createContext();
@@ -15,8 +16,8 @@ export const DataProvider =({children})=>{
 
     useEffect(() => {
         const fetchData=async()=>{
-            const cateResult = await axios.get("https://souq-abnod.herokuapp.com/api/categories");
-            const {data} = await axios.get("https://souq-abnod.herokuapp.com/api/products");
+            const cateResult = await axios.get(config.url+"api/categories");
+            const {data} = await axios.get(config.url+"api/products");
             
             setCategories(cateResult.data.data);
             setProducts(data.data);

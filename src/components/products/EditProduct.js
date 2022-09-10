@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { config } from '../../config';
 import { Globalstate } from '../../Globalstate';
 import Loader from '../loader/Loader';
 
@@ -56,7 +57,7 @@ const handlOnChange=({target})=>{
       return false;
     }
     try {
-    const {data} =await axios.patch('https://souq-abnod.herokuapp.com/api/products/'+product._id,{...product,img},{headers:{token:localStorage.getItem('token')}})
+    const {data} =await axios.patch(config.url+'api/products/'+product._id,{...product,img},{headers:{token:localStorage.getItem('token')}})
       
       toast.success("Product Edited");
       setCallBack(!callBack);
@@ -73,7 +74,7 @@ const removeImage = async () => {
   setLoading(true);
   try {
     let res = await axios.post(
-      "https://souq-abnod.herokuapp.com/api/image/destroy",
+      config.url+"api/image/destroy",
       { public_id: img.public_id },
       { headers: { token: localStorage.getItem('token') } }
     );
@@ -101,7 +102,7 @@ const handleUploadImg = async (e) => {
   try {
     let formData = new FormData();
     formData.append("file", file);
-    let res = await axios.post("https://souq-abnod.herokuapp.com/api/image/upload", formData, {
+    let res = await axios.post(config.url+"api/image/upload", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         token: localStorage.getItem('token') 
@@ -123,7 +124,7 @@ const handleUploadImg = async (e) => {
 //   if(!newCategory){toast.warning("Category Name is required"); return false;}
   
 //   try {
-//     const {data}= await axios.post("https://souq-abnod.herokuapp.com/api/categories",{categoryName:newCategory},{headers:{token:localStorage.getItem('token')}})
+//     const {data}= await axios.post(config.url+"api/categories",{categoryName:newCategory},{headers:{token:localStorage.getItem('token')}})
 //     toast.success("Category Added"); 
 //     setCategories([...categories,data.data])
 //   } catch (error) {
@@ -135,7 +136,7 @@ const handleUploadImg = async (e) => {
 // const handleDeleteCategory=async(cate)=>{
 //   if(!window.confirm("انت متأكد عاوز تمسح الكاتيجوري ده ياسطا ؟")) return false;
 //   try {
-//     await axios.delete('https://souq-abnod.herokuapp.com/api/categories/'+cate._id,{headers:{token:localStorage.getItem('token')}});
+//     await axios.delete(config.url+'api/categories/'+cate._id,{headers:{token:localStorage.getItem('token')}});
 //     toast.success("Category Deleted");
 //     setCategories(categories.filter(c=>c._id!==cate._id));
     
