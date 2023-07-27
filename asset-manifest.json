@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/souq-abnoud/static/css/main.7ac23ae4.css",
-    "main.js": "/souq-abnoud/static/js/main.e4c3a636.js",
+    "main.css": "/souq-abnoud/static/css/main.c45bc206.css",
+    "main.js": "/souq-abnoud/static/js/main.dbb8dc7a.js",
     "static/media/a1.jpeg": "/souq-abnoud/static/media/a1.0094dce117d15d098c0b.jpeg",
     "static/media/a5.jpeg": "/souq-abnoud/static/media/a5.4dbeda19ef7b9b4e78ca.jpeg",
     "static/media/a2.jpeg": "/souq-abnoud/static/media/a2.6bc9dcd736b099d6149a.jpeg",
     "static/media/a4.jpeg": "/souq-abnoud/static/media/a4.7555a882ff3078558182.jpeg",
     "static/media/a3.jpeg": "/souq-abnoud/static/media/a3.4147e30ad9822afe6e09.jpeg",
     "index.html": "/souq-abnoud/index.html",
-    "main.7ac23ae4.css.map": "/souq-abnoud/static/css/main.7ac23ae4.css.map",
-    "main.e4c3a636.js.map": "/souq-abnoud/static/js/main.e4c3a636.js.map"
+    "main.c45bc206.css.map": "/souq-abnoud/static/css/main.c45bc206.css.map",
+    "main.dbb8dc7a.js.map": "/souq-abnoud/static/js/main.dbb8dc7a.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ac23ae4.css",
-    "static/js/main.e4c3a636.js"
+    "static/css/main.c45bc206.css",
+    "static/js/main.dbb8dc7a.js"
   ]
 }
